@@ -18,7 +18,7 @@ func get_env_var() string {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello DevOpsDay, pod name is %s, version is %s",get_hostname(), get_env_var())
+    fmt.Fprintf(w, "Hello DevOps, pod name is %s, version is %s",get_hostname(), get_env_var())
 }
 
 func main() {
