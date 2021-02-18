@@ -22,6 +22,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-    http.HandleFunc("/", handler)
+    http.HandleFunc("/devopsday", handler)
     log.Fatal(http.ListenAndServe(":9999", nil))
 }
