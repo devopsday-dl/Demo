@@ -12,13 +12,13 @@ func get_hostname() string {
     return hostname
 }
 
-func get_env_var() string {
-    version := os.Getenv("VERSION")
-    return version
-}
+// func get_env_var() string {
+//     version := os.Getenv("VERSION")
+//     return version
+// }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello DevOpsDay, pod name is %s, version is %s",get_hostname(), get_env_var())
+    fmt.Fprintf(w, "Hello GitOps,this is xiaomage,version is v1, pod name is %s",get_hostname())
 }
 
 func main() {
