@@ -7,21 +7,11 @@ import (
     "os"
 )
 
-func get_hostname() string {
-    hostname, _ := os.Hostname()
-    return hostname
-}
-
-func get_env_var() string {
-    version := os.Getenv("VERSION")
-    return version
-}
-
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello DevSecOps!!!!!!, This is xiaomage, pod name is %s, version is %s",get_hostname(), get_env_var())
+    fmt.Fprintf(w, "Hello %s,this is %s,version is v1.1.0", os.Getenv("CONF"), os.Getenv("USERNAME"))
 }
 
 func main() {
-    http.HandleFunc("/", handler)
+    http.HandleFunc("/gotc", handler)
     log.Fatal(http.ListenAndServe(":9999", nil))
 }
